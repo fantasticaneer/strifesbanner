@@ -10,8 +10,8 @@ local function tablesetup()
     
     local function spawned( ply )
     print( ply:GetName().." joined the game.\n" )
-    print(sql.QueryValue("SELECT * from slot1_data" ))
-    if sql.QueryValue("SELECT * from slot1_data" ) == ply:SteamID() then
+    print(sql.QueryValue("SELECT CharID FROM slot1_data WHERE SteamID = '"..ply:SteamID().."'" ))
+    if sql.QueryValue("SELECT CharID FROM slot1_data WHERE SteamID = '"..ply:SteamID().."'" ) == "0" then
         print( ply:GetName().." has a character already.\n" )
         return true
     else

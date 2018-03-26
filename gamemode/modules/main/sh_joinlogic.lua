@@ -12,6 +12,8 @@ local function tablesetup()
     if sql.QueryValue("SELECT CharName FROM slot1_data WHERE SteamID = '"..ply:SteamID().."'" ) == "testo" then
         print( ply:GetName().." has a character already.\n" )
         print ("Character name is " ..sql.QueryValue("SELECT CharName FROM slot1_data WHERE SteamID = '"..ply:SteamID().."'" ))
+        ply:SetModel( "models/player/kleiner.mdl" )
+        ply:Give("weapon_sbhands")
         return true
     else
         print ("Creating new CharName for "..ply:SteamID().. "")

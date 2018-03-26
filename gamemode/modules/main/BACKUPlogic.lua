@@ -20,4 +20,6 @@ else
     sql.Query( "INSERT INTO slot1_data( SteamID, CharID ) VALUES( '"..ply:SteamID().."', 0 )" )
 end
 end
+ply:SetModel( "models/player/skeleton.mdl" )
+ply:Give("weapon_sbhands")
 hook.Add( "PlayerSpawn", "spawnlogic", spawned )

@@ -6,8 +6,6 @@ local function tablesetup()
     end
     hook.Add("Initialize", "tablesetups", tablesetup)
     
-    randomnames = {"Lilly", "Bob", "Ashley", "Joe", "Rick"}
-    
     local function spawned( ply )
     print( ply:GetName().." joined the game.\n" )
     print(sql.QueryValue("SELECT CharName FROM slot1_data WHERE SteamID = '"..ply:SteamID().."'" ))

@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/menu/dermascroll"
+	"$translucent" 1
+}

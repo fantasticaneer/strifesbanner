@@ -1,8 +1,8 @@
 -- Liro - shared.lua
 
 -- Declare gamemode information
-GM.Name = "Strife's Banner"
-GM.Author = ""
+GM.Name = "Liro"
+GM.Author = "Various Contributors"
 GM.Email = ""
-GM.Website = ""
-
+GM.Website = "https://github.com/Alydus/liro"
+GM.Version = "1.9"

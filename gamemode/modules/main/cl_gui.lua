@@ -21,7 +21,7 @@ function newcharframe()
         surface.PlaySound( "strifesbanner/sbintro.wav" )
         frame1:SetPos( ((ScrW() / 2) - (ScrW() * 0.4)) , ((ScrH() / 2) - (ScrH() * 0.225)))
         frame1:SetSize( ScrW() * 0.8, ScrH() * 0.45 )
-		frame1:SetTitle("")
+		frame1:SetTitle(LocalPlayer():GetNWString("firstname") .. " " .. LocalPlayer():GetNWString("lastname"))
         frame1:MakePopup()
 		frame1.Paint = function( self, w, h ) -- 'function Frame:Paint( w, h )' works too
 		frame1:ShowCloseButton(false)

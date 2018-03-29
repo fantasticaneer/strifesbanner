@@ -4,26 +4,26 @@ mmodels = {"models/player/Group01/male_01.mdl", "models/player/Group01/male_04.m
 ffirstnames = {"Anna", "Charlotte", "Eleanor", "Ella", "Eva", "Grace", "Julia", "Lucy", "Rose", "Stella", "Violet", "Lena", "Alice", "Beatrice", "Clara", "Edith", "Esther", "Evelyn", "Hazel", "Florence", "Josephine", "June", "Mabel", "Vera", "Viola", "Sylvia", "Ruby", "Agnes", "Alma", "Bessie", "Betty", "Blanche", "Dorothy", "Elsie", "Genevieve", "Helen"}
 mfirstnames = {"Andrew", "Benjamin", "Charles", "Harry", "Henry", "Jack", "Leo", "Ray", "Sam", "William", "Arthur", "Edward", "Frank", "Homer", "Leon", "Louis", "Lewis", "Oscar", "Raymond", "Victor", "Vincent", "Walter"}
 lastnames = {"Taylor", "Smith", "Moore", "Baker", "Walker", "Hall", "Turner", "Collins", "Jackson", "Carter", "Abrahams", "Abrahamson", "Ackerman", "Addison", "Atwater", "Atwood", "Ayers", "Ashworth", "Bonney", "Booth", "Colbert", "Collingwood", "Cockburn", "Cookson", "Derrick", "Debenham", "Davidson", "Eccleston", "Dyer", "Dwerryhouse", "Garfield", "Hamilton", "Hampson", "Hawking", "Hayward", "Huxley", "Irvine", "Jackson", "Hyland", "Lamar", "Layton", "Kitchens", "Kinsley", "Norman", "Norris", "Saunders", "Scrivenor", "Sherman", "Simms", "Spurling", "Southers", "Southgate", "Snyders", "Stern", "Warren", "Watson", "Watts", "Weaver", "Webb", "Ware", "Warrick", "Waterman", "York", "Morgan", "Young", "Wright"}
-genders = {"Male", "Female"}
+sexes = {"Male", "Female"}
 
 
 function generatechar(ply)
-    ply:SetNWString("gender", genders[ math.random ( #genders )])
+    ply:SetNWString("sex", sexes[ math.random ( #sexes )])
 
     -- if female
-    if ply:GetNWString("gender") == "Female" then
+    if ply:GetNWString("sex") == "Female" then
         ply:SetNWString("model", fmodels[ math.random( #fmodels ) ] )
         ply:SetNWString( "firstname", ffirstnames[ math.random( #ffirstnames ) ])
         ply:SetNWString( "lastname", lastnames[ math.random( #lastnames ) ])
 
-    else if ply:GetNWString("gender") == "Male" then 
+    else if ply:GetNWString("sex") == "Male" then 
         -- if male
         ply:SetNWString("model", mmodels[ math.random( #mmodels ) ] )
         ply:SetNWString( "firstname", mfirstnames[ math.random( #mfirstnames ) ])
         ply:SetNWString( "lastname", lastnames[ math.random( #lastnames ) ])
         end
     end
-print(ply:GetNWString("gender") .. " " .. ply:GetNWString("model") .. " " .. ply:GetNWString("firstname") .. " " .. ply:GetNWString("lastname"))  
+print(ply:GetNWString("sex") .. " " .. ply:GetNWString("model") .. " " .. ply:GetNWString("firstname") .. " " .. ply:GetNWString("lastname"))  
 end
 
 local function tablesetup()

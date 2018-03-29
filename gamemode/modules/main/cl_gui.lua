@@ -11,11 +11,17 @@ local TexturedQuadStructure = { -- this thing sets the texture for the character
 }
 
 function newcharframe()
+	-- hi fantastic here these are the infos you need to get
+	-- LocalPlayer():GetNWString("sex") / players sex
+	-- LocalPlayer():GetNWString("model") / players model filepath
+	-- LocalPlayer():GetNWString("firstname") / players firstname
+	-- LocalPlayer():GetNWString("lastname") / players lastname
+
         local frame1 = vgui.Create("DFrame")
         surface.PlaySound( "strifesbanner/sbintro.wav" )
         frame1:SetPos( ((ScrW() / 2) - (ScrW() * 0.4)) , ((ScrH() / 2) - (ScrH() * 0.225)))
         frame1:SetSize( ScrW() * 0.8, ScrH() * 0.45 )
-        frame1:SetTitle("")
+		frame1:SetTitle("")
         frame1:MakePopup()
 		frame1.Paint = function( self, w, h ) -- 'function Frame:Paint( w, h )' works too
 		frame1:ShowCloseButton(false)

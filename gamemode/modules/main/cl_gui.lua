@@ -12,7 +12,7 @@ local TexturedQuadStructure = { -- this thing sets the texture for the character
 
 function newcharframe()
         local frame1 = vgui.Create("DFrame")
- 
+        surface.PlaySound( "strifesbanner/sbintro.wav" )
         frame1:SetPos( ((ScrW() / 2) - (ScrW() * 0.4)) , ((ScrH() / 2) - (ScrH() * 0.225)))
         frame1:SetSize( ScrW() * 0.8, ScrH() * 0.45 )
         frame1:SetTitle("")

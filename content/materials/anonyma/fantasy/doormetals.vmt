@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "anonyma/fantasy/doormetals"
+	$envmap env_cubemap
+}

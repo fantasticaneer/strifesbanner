@@ -1,0 +1,10 @@
+"vertexlitGeneric"
+{
+	// Original shader: BaseTexture
+	"$basetexture" "anonyma/fantasy/medidoor5"
+	"$basealphaenvmapmask" 1
+	"$surfaceprop" "wood"
+	"$envmap" "env_cubemap"
+
+
+}

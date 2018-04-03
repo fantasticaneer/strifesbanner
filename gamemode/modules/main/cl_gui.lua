@@ -47,7 +47,7 @@ end
 		frame1:Close()
 	end
 	local ava = vgui.Create( "DModelPanel" , frame1 ) -- an avatar image showing their selected model
-	ava:SetModel( "models/player/kleiner.mdl" ) -- Change this later to whatever the player clicks on
+	ava:SetModel( LocalPlayer():GetNWString("model") ) -- Change this later to whatever the player clicks on
 	ava:SetSize( ScrW() * 0.4, ScrH() * 0.4 )
 	ava:SetPos( (((ScrW() * 0.8) / 2)), (ScrH() * 0.01) )
 	function ava:LayoutEntity( Entity ) return end -- disables default rotation
@@ -61,5 +61,10 @@ end
 end
 	
 end
-concommand.Add("newcharframe", newcharframe)
+
+function acceptchar()
+end
+
+concommand.Add("str_newcharframe", newcharframe)
+concommand.Add("str_acceptchar", acceptchar)
 -- End of derma stuff

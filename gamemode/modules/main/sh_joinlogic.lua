@@ -23,7 +23,7 @@ function generatechar(ply)
         ply:SetNWString( "lastname", lastnames[ math.random( #lastnames ) ])
         end
     end
-timer.Simple(0.1, function() ply:ConCommand("newcharframe") end)
+timer.Simple(0.1, function() ply:ConCommand("str_newcharframe") end)
 print(ply:GetNWString("sex") .. " " .. ply:GetNWString("model") .. " " .. ply:GetNWString("firstname") .. " " .. ply:GetNWString("lastname"))  
 end
 

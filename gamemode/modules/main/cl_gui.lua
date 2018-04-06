@@ -38,6 +38,16 @@ function newcharframe()
 		frame1:ShowCloseButton(false)
 	draw.TexturedQuad( TexturedQuadStructure ) -- Draw a red box instead of the frame
 end
+
+		local textcharsheet = vgui.Create("DLabel", frame1)
+		textcharsheet:SetPos((((ScrW() * 0.3) / 2) - (ScrW() * 0.06)), 10)
+		textcharsheet:SetText( "Character Sheet" )
+		textcharsheet:SetColor( Color( 0, 0, 0 ) )
+		textcharsheet:SetFont("colchester")
+		textcharsheet:SetAutoStretchVertical(true)
+		textcharsheet:SetSize(1000,10)
+
+
 		local acceptb = vgui.Create("DButton", frame1) -- making a button for accepting new character stuff
 		acceptb:SetSize( ScrW() * 0.12, ScrH() * 0.04 )
 		acceptb:SetPos( (((ScrW() * 0.8) / 2) - (ScrW() * 0.06)), (ScrH() * 0.40))

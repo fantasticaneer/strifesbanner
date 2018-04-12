@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/menu/dice2"
+	"$translucent" 1
+}

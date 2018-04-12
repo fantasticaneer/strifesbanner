@@ -28,24 +28,52 @@ function newcharframe()
 	-- LocalPlayer():GetNWString("firstname") / players firstname
 	-- LocalPlayer():GetNWString("lastname") / players lastname
 
-        local frame1 = vgui.Create("DFrame")
+        local frame1 = vgui.Create("DFrame") -- this thing is the big character create scroll
         surface.PlaySound( "strifesbanner/sbintro.wav" )
         frame1:SetPos( ((ScrW() / 2) - (ScrW() * 0.4)) , ((ScrH() / 2) - (ScrH() * 0.225)))
         frame1:SetSize( ScrW() * 0.8, ScrH() * 0.45 )
-		frame1:SetTitle(LocalPlayer():GetNWString("firstname") .. " " .. LocalPlayer():GetNWString("lastname"))
+		frame1:SetTitle(" ")
+		frame1:SetDraggable(false)
         frame1:MakePopup()
 		frame1.Paint = function( self, w, h ) -- 'function Frame:Paint( w, h )' works too
 		frame1:ShowCloseButton(false)
 	draw.TexturedQuad( TexturedQuadStructure ) -- Draw a red box instead of the frame
 end
 
-		local textcharsheet = vgui.Create("DLabel", frame1)
+		local textcharsheet = vgui.Create("DLabel", frame1) -- some text
 		textcharsheet:SetPos((((ScrW() * 0.3) / 2) - (ScrW() * 0.06)), 10)
 		textcharsheet:SetText( "Character Sheet" )
 		textcharsheet:SetColor( Color( 0, 0, 0 ) )
 		textcharsheet:SetFont("colchester")
 		textcharsheet:SetAutoStretchVertical(true)
 		textcharsheet:SetSize(1000,10)
+		
+		local textname = vgui.Create("DLabel", frame1) -- character name
+		textname:SetPos((((ScrW() * 0.4) / 2) - (ScrW() * 0.06)), 80)
+		textname:SetText( "Name:" .. " " .. (LocalPlayer():GetNWString("firstname")) .. " " .. (LocalPlayer():GetNWString("lastname")))
+		textname:SetColor( Color( 0, 0, 0 ) )
+		textname:SetFont("alterna")
+		textname:SetAutoStretchVertical(true)
+		textname:SetSize(1000,10)
+		
+		local textsex = vgui.Create("DLabel", frame1) -- character sex
+		textsex:SetPos((((ScrW() * 0.4) / 2) - (ScrW() * 0.06)), 120)
+		textsex:SetText( "Sex:" .. " " .. (LocalPlayer():GetNWString("sex")))
+		textsex:SetColor( Color( 0, 0, 0 ) )
+		textsex:SetFont("alterna")
+		textsex:SetAutoStretchVertical(true)
+		textsex:SetSize(1000,10)
+		
+		genbutton = vgui.Create( "DImageButton", frame1 ) -- generate button (the big ol' dice)
+		genbutton:SetPos((((ScrW() * 0.4) / 2) - (ScrW() * 0.06)), 170)
+		genbutton:SetSize( 100, 100 )			// OPTIONAL: Use instead of SizeToContents() if you know/want to fix the size
+		genbutton:SetImage( "vgui/menu/dice1" )	// Set the material - relative to /materials/ directory
+		//genbutton:SizeToContents()				// OPTIONAL: Use instead of SetSize if you want to resize automatically ( without stretching )
+		genbutton.DoClick = function()
+			Msg( "Generate testbutton clicked" )
+			surface.PlaySound( "strifesbanner/dice.mp3" )
+			genbutton:SetImage( "vgui/menu/dice2")
+		end
 
 
 		local acceptb = vgui.Create("DButton", frame1) -- making a button for accepting new character stuff

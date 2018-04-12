@@ -19,7 +19,7 @@ local function loadFonts()
         font = "runescape"})
 		
 	    surface.CreateFont("alterna", {
-        size = 24,
+        size = 36,
         weight = 500,
         antialias = true,
         shadow = false,

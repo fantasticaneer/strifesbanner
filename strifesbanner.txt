@@ -2,6 +2,6 @@
 {
 	"base"		"base"
 	"title"		"Strife's Banner"
-	"maps"		"^sb_"
+	"maps"		"^str_"
 	"menusystem"	"1"
 }
